@@ -3,94 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carta Especial</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #fff8c6;
-            overflow: hidden;
-        }
-        .container {
-            position: relative;
-            text-align: center;
-            cursor: pointer;
-        }
-        .envelope {
-            width: 300px;
-            height: 200px;
-            background: #d2691e;
-            position: relative;
-            border-radius: 10px;
-        }
-        .flap {
-            width: 0;
-            height: 0;
-            border-left: 150px solid transparent;
-            border-right: 150px solid transparent;
-            border-bottom: 100px solid #a0522d;
-            position: absolute;
-            top: -50px;
-            left: 0;
-            right: 0;
-            margin: auto;
-            transform-origin: top;
-        }
-        .letter {
-            width: 280px;
-            height: 250px;
-            background: #fff;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            border-radius: 5px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            font-family: 'Courier New', monospace;
-            font-size: 18px;
-            transform: translateY(100%);
-            opacity: 0;
-            background: repeating-linear-gradient(
-                white, white 24px, #d3d3d3 25px, white 26px
-            );
-        }
-        .flowers {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            width: 300px;
-            height: 300px;
-            background: url('https://i.imgur.com/axVxu8U.png') no-repeat center/contain;
-        }
-    </style>
+    <title>Carta Especial Mejorada</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container" onclick="toggleLetter()">
-        <div class="flowers"></div>
+    <div class="container" id="envelope-container">
         <div class="envelope">
+            <div class="back"></div>
+            <div class="inner-flap"></div>
             <div class="flap"></div>
-            <div class="letter">Querida persona, aquí tienes un regalo especial: flores amarillas y un mensaje para alegrar tu día.</div>
+            <div class="letter">
+                <div class="letter-content">
+                    <p>Querida persona,</p>
+                    <p>Aquí tienes un regalo especial: flores amarillas y un mensaje para alegrar tu día.</p>
+                    <p>A veces, los pequeños detalles traen la mayor felicidad. Como estas flores amarillas, que representan la amistad y la alegría.</p>
+                    <p>Espero que cada vez que mires esta carta recuerdes que hay personas que piensan en ti y desean que tengas un día maravilloso.</p>
+                    <p>Las flores amarillas simbolizan la amistad, la felicidad y la energía positiva.</p>
+                    <p>Con cariño,</p>
+                    <p>Un amigo</p>
+                </div>
+            </div>
         </div>
     </div>
-
-    <script>
-        let isOpen = false;
-        function toggleLetter() {
-            if (!isOpen) {
-                gsap.to(".flap", { rotationX: -180, duration: 0.8, ease: "power2.out" });
-                gsap.to(".letter", { y: -50, opacity: 1, duration: 1, delay: 0.3 });
-                gsap.to(".flowers", { scale: 1, duration: 1, delay: 0.5, ease: "elastic.out(1, 0.5)" });
-            } else {
-                gsap.to(".flap", { rotationX: 0, duration: 0.8, ease: "power2.out" });
-                gsap.to(".letter", { y: 50, opacity: 0, duration: 0.5 });
-                gsap.to(".flowers", { scale: 0, duration: 0.5 });
-            }
-            isOpen = !isOpen;
-        }
-    </script>
+    
+    <div class="instructions">Ábreme :3</div>
+    <div id="flowers-container"></div>
 </body>
 </html>

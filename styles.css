@@ -1,0 +1,202 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #fff8c6, #ffe9c6);
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    perspective: 1000px;
+    width: 320px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.envelope {
+    width: 320px;
+    height: 200px;
+    background: linear-gradient(145deg, #d2691e, #cd853f);
+    position: relative;
+    border-radius: 8px;
+    overflow: visible;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    top: 50px;
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(145deg, #a0522d, #8b4513);
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+    transform-origin: top center;
+    z-index: 1;
+}
+
+.letter {
+    width: 300px;
+    height: 350px;
+    background: white;
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    line-height: 1.4;
+    transform: translateY(0);
+    opacity: 0;
+    z-index: 2;
+    background: repeating-linear-gradient(
+        white, white 24px, #d3d3d3 25px, white 26px
+    );
+    overflow-y: auto;
+    transition: transform 0.8s ease-out, opacity 0.8s;
+}
+
+.letter-content {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.instructions {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #fff8c6, #ffe9c6);
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    perspective: 1000px;
+    width: 320px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.envelope {
+    width: 320px;
+    height: 200px;
+    background: linear-gradient(145deg, #d2691e, #cd853f);
+    position: relative;
+    border-radius: 8px;
+    overflow: visible;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    top: 50px;
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(145deg, #a0522d, #8b4513);
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+    transform-origin: top center;
+    z-index: 1;
+}
+
+.letter {
+    width: 300px;
+    height: 350px;
+    background: white;
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    line-height: 1.4;
+    transform: translateY(0);
+    opacity: 0;
+    z-index: 2;
+    background: repeating-linear-gradient(white, white 24px, #d3d3d3 25px, white 26px);
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.letter-content {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+ /* FLORES  */
+
+ .flower {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.flower-center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #8B4513; /* Marrón sólido */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.petal {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ffe44c; /* Amarillo sólido */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+}
+
+/* Distribuir los 6 pétalos en un patrón circular */
+.petal:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateY(-25px); }
+.petal:nth-child(2) { transform: translate(-50%, -50%) rotate(60deg) translateY(-25px); }
+.petal:nth-child(3) { transform: translate(-50%, -50%) rotate(120deg) translateY(-25px); }
+.petal:nth-child(4) { transform: translate(-50%, -50%) rotate(180deg) translateY(-25px); }
+.petal:nth-child(5) { transform: translate(-50%, -50%) rotate(240deg) translateY(-25px); }
+.petal:nth-child(6) { transform: translate(-50%, -50%) rotate(300deg) translateY(-25px); }
+
