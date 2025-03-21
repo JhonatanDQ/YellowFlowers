@@ -9,13 +9,13 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container" id="envelope-container">
+    <div class="container" id="envelope-container" style="cursor: default;">
         <div class="envelope">
             <div class="back"></div>
             <div class="inner-flap"></div>
             <div class="flap"></div>
             <div class="letter">
-                <div class="letter-content">
+                <div class="letter-content" style="cursor: default; user-select: none;">
                     <p>Querida persona,</p>
                     <p>Aquí tienes un regalo especial: flores amarillas y un mensaje para alegrar tu día.</p>
                     <p>A veces, los pequeños detalles traen la mayor felicidad. Como estas flores amarillas, que representan la amistad y la alegría.</p>
@@ -28,7 +28,7 @@
         </div>
     </div>
     
-    <div class="instructions">Ábreme :3</div>
+    <div class="instructions">Ábreme :3 {{msg}}</div>
     <div id="flowers-container"></div>
 </body>
 </html>
